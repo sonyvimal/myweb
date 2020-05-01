@@ -4,7 +4,13 @@ pipeline {
         stage ("GIT Hub Checkout") {
             steps{
                 echo "Source: Hello World"
-                git 'https://github.com/sonyvimal/myweb.git'
+                git credentialsId: 'Github', url: 'https://github.com/sonyvimal/myweb.git'
+            }
+        }
+        stage ("Maven Build") {
+            steps {
+                echo "Trigger Maven Build"
+                sh mvn clean package
             }
         }
     }
