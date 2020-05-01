@@ -4,7 +4,7 @@ pipeline {
         stage ("GIT Hub Checkout") {
             steps{
                 echo "Source: Hello World"
-                url: 'https://github.com/sonyvimal/hello-world-1.git'
+                git 'https://github.com/sonyvimal/myweb.git'
             }
         }
     }
